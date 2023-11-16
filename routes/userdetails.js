@@ -57,7 +57,7 @@ router.post("/update", async (req, res) => {
           address: personalDetails.address,
           education: educationDetails,
           workExperience: experienceDetails,
-          skills: skillsDetails,
+          skills: skills,
         });
 
         res.status(200).json({ success: true, message: "Profile Created" });
