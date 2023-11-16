@@ -20,8 +20,7 @@ module.exports = function (passport) {
            
           if (user) {
              console.log("checking password");
-            const isPasswordValid = bcrypt.compareSync(password, user.password);
-            if (isPasswordValid) {
+             if (isPasswordValid) {
               return done(null, user);
             } else {
               return done(null, false, { message: "Incorrect password." });
