@@ -30,6 +30,7 @@ router.post("/update", async (req, res) => {
       await Profile.findOneAndUpdate(
         { user_id: personalDetails.id },
         {
+          user_id:personalDetails.id,
           fullName: personalDetails.fullName,
           email: personalDetails.email,
           phone_number: personalDetails.phoneNumber,
