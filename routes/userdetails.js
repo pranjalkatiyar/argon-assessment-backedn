@@ -4,19 +4,6 @@ const passport = require("passport");
 const isAuthenticated = require("../middleware/authenticated.js");
 const Profile = require("../models/mongo/userDetails.model.js");
 
-
-router.get("/profile/:id",async(req,res)=>{
-  try{
-    console.log("INSIDDE THE PROFILE");
-    console.log(req.params);
-    const profile=await Profile.findOne({user_id:req.params.id});
-    console.log(profile);
-    res.status(200).json({success:true,profile});
-  }catch(err){
-    console.log(err);
-  }
-})
-
 router.post("/update", async (req, res) => {
   console.log(req.body);
    try {
@@ -64,11 +51,11 @@ router.post("/update", async (req, res) => {
       }
       res.send("success"); 
   } catch (err) {
+    res.status(400).json({ success: false, message: "Internal server error" ,err});
     console.log(err);
   }
 });
 
 
-router.get("/facebooknode",)
-
+ 
 module.exports = router;
