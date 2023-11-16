@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/pg/user.model.js");
 const passport = require("passport");
- const generateToken = require("../utils/jwttoken.js");
+const bcrypt = require("bcryptjs");
+const generateToken = require("../utils/jwttoken.js");
 
 router.post("/signup", async (req, res) => {
   const { first_name, last_name, email, username, phone_number,image,id ,provider} =
