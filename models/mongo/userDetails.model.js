@@ -25,9 +25,11 @@ const educationSchema=new Schema({
 
 const profileSchema = new Schema({
   user_id: { type: String, required: true },
-  profilePicture: { type: String, default: '' },
+  username: { type: String, default: '' },
+  fullName: { type: String, default: '' },
+  phone_number: { type: String, default: '' },
+  email: { type: String, default: '' },
   description: { type: String, default: '' },
-  location: { type: String, default: '' },
   skills: { type: [String], default: [] },
   education: [educationSchema],
   workExperience: [experienceSchema],
